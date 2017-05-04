@@ -1,0 +1,32 @@
+<% include ../partials/boilerplate %>
+
+<!-- <div class='my-quote'>
+  <h2 class='qotd'>Quote of the Day</h2>
+  <h3><%= quoteOfTheDay.quote %></h3>
+  <div class='meta'>
+    <span class='author'><%= quoteOfTheDay.author %></span>
+    <span class='genre'><%= quoteOfTheDay.category %></span>
+  </div>
+  <img src='<%= quoteOfTheDay.picture %>' alt='<%=quoteOfTheDay.category%>'/>
+</div> -->
+
+<a href='/quotes/add'>Add a quote!</a>
+
+<div class='quotes'>
+  <% quotesData.forEach(function(quote) { %>
+    <div class='my-quote'>
+      <h3><%= quote.content %></h3>
+      <div class='meta'>
+        <span class='author'><%= quote.author %></span>
+        <span class='genre'><%= quote.genre_id %></span>
+      </div>
+      <a href='/quotes/<%= quote.id %>'>Go to page</a>
+      <a href='/quotes/edit/<%= quote.id %>'>Edit quote</a>
+      <form method='POST' action='/quotes/<%= quote.id %>?_method=DELETE'>
+        <input type='submit' value='Delete it!' />
+      </form>
+    </div>
+  <% }) %>
+</div>
+
+<% include ../partials/end %>
