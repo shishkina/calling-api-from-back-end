@@ -3,7 +3,9 @@ const controller = require('../controllers/quotesController');
 
 const quoteRoutes = express.Router();
 
-quoteRoutes.get('/', /*quoteHelpers.getTodaysQuote,*/ controller.index);
+const quoteHelpers = require('../services/quotes/quoteHelpers');
+
+quoteRoutes.get('/', quoteHelpers.getTodaysQuote, controller.index);
 quoteRoutes.get('/add', (req, res) => {
   res.render('quotes/quotes-add', {
     documentTitle: 'Ada\'s Quotes!!',
