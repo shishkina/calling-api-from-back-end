@@ -35,7 +35,7 @@ The end goal is to get a quote of the day from the [They Said So API](https://th
 
 ### File structure & setup
 
-In your `routes` folder, make a new directory `routehelpers`. Then, within that directory, make a new file: `quoteHelpers.js`. (This way of naming files is convention -- lets others know that the file is meant to add functionality to the quotes route.)
+In the root directory of your app, make a new directory `services`, with a subdirectory `quotes`. Then, within that directory, make a new file: `quoteHelpers.js`. (This way of naming files is convention -- lets others know that the file is meant to add functionality to the quotes route.)
 
 Directory structue check-in:
 
