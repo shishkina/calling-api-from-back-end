@@ -4,6 +4,7 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const cors = require('cors');
 const app = express();
 
 /* importing routes */
@@ -18,6 +19,7 @@ app.listen(PORT, function() {
 /* setting up views */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cors());
 
 /* setting static file */
 app.use('/static', express.static(path.join(__dirname, 'public')));
