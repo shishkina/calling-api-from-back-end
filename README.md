@@ -118,7 +118,7 @@ Now we have the data we want. But what do we do with it?
 
 During the request-response cycle, the request and response objects remain the same object throughout, just passed from one middleware to the next. This is how the `body-parser` middleware adds `req.body` for us to access. And it's how we'll be able to access the data we get from the `fetch` request: by attaching it to the response object.
 
-Express has a built-in property for us to use here: `req.locals`. From the [documentation](https://expressjs.com/en/4x/api.html#res.locals): "An object that contains response local variables scoped to the request, and therefore available only to the view(s) rendered during that request / response cycle (if any)."
+Express has a built-in property for us to use here: `res.locals`. From the [documentation](https://expressjs.com/en/4x/api.html#res.locals): "An object that contains response local variables scoped to the request, and therefore available only to the view(s) rendered during that request / response cycle (if any)."
 
 This means that if we attach something to `res.locals` in `routes/routehelpers/quoteHelpers.js`, we'll be able to access it in `controller.index` in `controllers/quotesController.js`.
 
